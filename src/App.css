@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(28, 43, 63);
+  padding: 0.4rem;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.nav-link:hover {
+  color: rgb(170, 158, 142);
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error img {
+  margin-top: 1.5rem;
+}
+.wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.wrapper h2 {
+  color: red;
+  font-size: 30px;
+  
+}
+.wrapper h3 {
+  padding: 1rem;
+}
+
+.wrapper p {
+  border: 1px solid rgb(170, 158, 142);
+  text-align: justify;
+  padding: 50px 6rem;
+  line-height: 1.5rem;
+  color: antiquewhite;
+  background-color: rgb(16, 32, 54);
+}
+
+.loader {
+  margin: 1rem;
+}
+
+.loader img {
+  width: 60%;
+}
+
+.pagin button {
+  width: 3rem;
+  padding: 5px;
+  background-color: rgb(16, 32, 54);
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border: 3px solid rgb(34, 33, 32);
+}
+.pagin button:hover {
+  background-color: rgb(28, 43, 63);
+}

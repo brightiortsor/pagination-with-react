@@ -5,13 +5,11 @@ const Pagination = ({ totalPages, handleClick }) => {
 
   return (
     <div className="pagin">
-      <button> Prev </button>
       {pages.map((num) => (
         <button key={num} onClick={() => handleClick(num)}>
           {num}
         </button>
       ))}
-      <button> Next </button>
     </div>
   );
 };

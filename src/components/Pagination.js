@@ -57,9 +57,6 @@ const Pagination = ({ totalPages, handleClick }) => {
         </button>
       }
     </div>
-
-    //
-    //<button onClick={() => setPage(num)}>{num}</button>
   );
 };
 export default Pagination;

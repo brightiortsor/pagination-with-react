@@ -11,6 +11,7 @@ export default function Users() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  console.log(users);
 
   useEffect(() => {
     const fetchUsers = async () => {

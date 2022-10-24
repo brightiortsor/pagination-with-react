@@ -43,7 +43,6 @@
 .wrapper h2 {
   color: red;
   font-size: 30px;
-  
 }
 .wrapper h3 {
   padding: 1rem;
@@ -77,4 +76,24 @@
 }
 .pagin button:hover {
   background-color: rgb(28, 43, 63);
+}
+
+.data {
+  display: flex;
+}
+
+.data img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border: 5px solid rgb(16, 32, 54);
+  border-radius: 1rem;
+}
+
+.data-info {
+  padding: 0 0 1rem 3rem;
+}
+
+.data-info p {
+  line-height: 1.5rem;
 }

@@ -11,7 +11,6 @@ export default function Users() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  console.log(users);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -24,10 +23,18 @@ export default function Users() {
     };
     fetchUsers();
   }, []);
-
+    // const pages = [...Array(totalPages).keys()].map((num) => num + 1);
+  
   const handleClick = (num) => {
     setPage(num);
   };
+  
+  const handlePrev = () => {
+    setPage(prev => prev-1)
+  }
+  const handleNext = () => {
+    setPage(prev => prev+1)
+  }
   return (
     <div className="loader">
       {loading ? (
@@ -40,7 +47,7 @@ export default function Users() {
         </div>
       )}
 
-      <Pagination totalPages={totalPages} handleClick={handleClick} />
+      <Pagination totalPages={totalPages} handlePrev={handlePrev} handleClick={handleClick} handleNext={handleNext} disabledPrev={page <= 1} disabledNext={page >= totalPages} />
     </div>
   );
 }

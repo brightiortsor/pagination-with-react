@@ -46,13 +46,13 @@ function App() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="nav-link">
-                  About
+                <Link to="/abouts" className="nav-link">
+                  ErrBound
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="nav-link">
-                  Contact
+                  Err404
                 </Link>
               </li>
               <li>

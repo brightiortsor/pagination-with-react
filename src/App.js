@@ -2,10 +2,8 @@ import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import React from "react";
 import "./App.css";
 import Home from "./components/Home.js";
-import About from "./components/About.js";
-import Contact from "./components/Contact.js";
 import Users from "./components/Users.js";
-import Error from "./components/Error";
+import Error from "./components/Error.js";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -14,18 +12,14 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
-    //logErrorToMyService(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       return <h1>Something went wrong.</h1>;
     }
 
@@ -35,7 +29,7 @@ class ErrorBoundary extends React.Component {
 
 function App() {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary> 
       <div className="App">
         <Router>
           <nav className="container">
@@ -45,14 +39,10 @@ function App() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/abouts" className="nav-link">
-                  ErrBound
-                </Link>
-              </li>
+
               <li>
                 <Link to="/contact" className="nav-link">
-                  Err404
+                  Contact
                 </Link>
               </li>
               <li>
@@ -62,12 +52,12 @@ function App() {
               </li>
             </ul>
           </nav>
+     
           <main>
             <div>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/contact" element={<Error />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="*" element={<Error />} />
               </Routes>

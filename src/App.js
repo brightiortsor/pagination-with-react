@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import React from "react";
 import "./App.css";
 import Home from "./components/Home.js";
-import Users from "./components/Users.js";
+import Repos from "./components/Repos.js";
+import SingleRepo from "./components/SingleRepo";
 import Error from "./components/Error.js";
 
 class ErrorBoundary extends React.Component {
@@ -15,8 +16,7 @@ class ErrorBoundary extends React.Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-  }
+  componentDidCatch(error, errorInfo) {}
 
   render() {
     if (this.state.hasError) {
@@ -29,43 +29,40 @@ class ErrorBoundary extends React.Component {
 
 function App() {
   return (
-    <ErrorBoundary> 
-      <div className="App">
-        <Router>
-          <nav className="container">
-            <ul className="menu">
-              <li>
-                <Link to="/" className="nav-link">
-                  Home
-                </Link>
-              </li>
+    <div className="App">
+      <Router>
+        <nav className="container">
+          <ul className="menu">
+            <li>
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/error" className="nav-link">
+                Error
+              </Link>
+            </li>
+            <li>
+              <Link to="/repos" className="nav-link">
+                Repos
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-              <li>
-                <Link to="/contact" className="nav-link">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/users" className="nav-link">
-                  Users
-                </Link>
-              </li>
-            </ul>
-          </nav>
-     
-          <main>
-            <div>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Error />} />
-                <Route path="/users" element={<Users />} />
-                <Route path="*" element={<Error />} />
-              </Routes>
-            </div>
-          </main>
-        </Router>
-      </div>
-    </ErrorBoundary>
+        <main>
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/repos" element={<Repos />} />
+              <Route path="/repos/:userId" element={<SingleRepo />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </ErrorBoundary>
+        </main>
+      </Router>
+    </div>
   );
 }
 
